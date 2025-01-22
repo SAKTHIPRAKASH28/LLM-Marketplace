@@ -1,4 +1,19 @@
-import { FooterProps } from "@/types";
+
+
+interface Link {
+  href: string;
+  title: string;
+}
+
+interface SocialLink {
+  link: Link;
+}
+
+interface FooterProps {
+  links: Link[];
+  social_links: SocialLink[];
+  copyright: string;
+}
 
 export function Footer({ links, social_links, copyright }: FooterProps) {
   return (
@@ -12,10 +27,10 @@ export function Footer({ links, social_links, copyright }: FooterProps) {
               {links.map((link, index) => (
                 <li key={index}>
                   <a
-                    href={link.link.href}
+                    href={link.href}
                     className="text-zinc-400 hover:text-white "
                   >
-                    {link.link.title}
+                    {link.title}
                   </a>
                 </li>
               ))}

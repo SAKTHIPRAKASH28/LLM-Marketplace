@@ -33,11 +33,6 @@ export interface SocialLink {
   url: string;
 }
 
-export interface FooterProps {
-  links: FooterLink[];
-  social_links: SocialLink[];
-  copyright: string;
-}
 
 export interface Pricing {
   type: string; // e.g., "per-token" or "per-call"
