@@ -1,0 +1,20 @@
+{
+    "comments": [
+      {
+        "id": "1",
+        "issueId": "1",
+        "content": "Comment 1 1",
+        "createdAt": "2024-02-20T10:30:00Z",
+        "createdBy": "user 1",
+        "images": []
+      },
+      {
+        "id": "2",
+        "issueId": "1",
+        "content": "Comment 2",
+        "createdAt": "2024-02-20T11:15:00Z",
+        "createdBy": "user 2",
+        "images": []
+      }
+    ]
+  }

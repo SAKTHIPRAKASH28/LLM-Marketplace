@@ -9,7 +9,25 @@ export interface MenuItem {
   label: string;
   url: string;
 }
+export interface Issue {
+  id: string;
+  title: string;
+  description: string;
+  status: 'open' | 'closed';
+  createdAt: string;
+  createdBy: string;
+  labels: string[];
+  images?: string[];
+}
 
+export interface Comment {
+  id: string;
+  issueId: string;
+  content: string;
+  createdAt: string;
+  createdBy: string;
+  images?: string[];
+}
 export interface NavbarProps {
   menuItems: MenuItem[];
 }
