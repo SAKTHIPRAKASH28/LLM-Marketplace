@@ -18,7 +18,7 @@ export function Navbar({ menuItems }: NavbarProps) {
           <div className="flex items-center">
             <a href="/" className="flex items-center gap-2">
               <Sparkles className="h-6 w-6 text-purple-500" />
-              <span className="text-lg font-bold text-white">AI Models</span>
+              <span className="text-lg font-bold text-white">LLM Marketplace</span>
             </a>
           </div>
           <div className="hidden md:block">
