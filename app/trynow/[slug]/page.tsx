@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { NavbarSkeleton, FooterSkeleton, DocsSkeleton } from "@/components/LoadingSkeletons";
 import stack from "../../../contentstackConfig";
 import { usePathname } from "next/navigation"; // Import usePathname from next/navigation
+import {ApiDocsData} from "@/types"
 
 // Define SetupStep interface for data
 interface SetupStep {
@@ -50,14 +51,13 @@ async function fetchNavbarAndFooterData() {
 
 export default function TryNowPage() {
   const pathname = usePathname(); // Get the current pathname
-  const slug = pathname?.split('/').pop(); // Extract slug from the URL path
-  
+  const slug : string = pathname?.split('/').pop() || ""; 
   const [activeTab, setActiveTab] = useState<'typescript' | 'javascript' | 'python'>('typescript');
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
-  const [navbarData, setNavbarData] = useState(null);
-  const [footerData, setFooterData] = useState(null);
-  const [apiDocsData, setApiDocsData] = useState(null);
+  const [navbarData, setNavbarData] = useState<any>(null);
+  const [footerData, setFooterData] = useState<any>(null);
+  const [apiDocsData, setApiDocsData] = useState<{ js: SetupStep[], ts: SetupStep[], python: SetupStep[] } | null>(null);
   const [notFound, setNotFound] = useState(false); // New state for model not found
 
   useEffect(() => {
@@ -77,7 +77,7 @@ export default function TryNowPage() {
   useEffect(() => {
     async function loadDocs() {
       try {
-        const docsData = await fetchAPIDocs(slug);
+        const docsData = await fetchAPIDocs(slug) as ApiDocsData;
 
         // Check if no data is found
         if (!docsData.entries || docsData.entries.length === 0) {

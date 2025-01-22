@@ -33,7 +33,7 @@ async function fetchLandingPageData() {
 import { NavbarSkeleton, HeroSectionSkeleton, ModelCardSkeleton, FooterSkeleton } from '../components/LoadingSkeletons';
 
 export default function Home() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

@@ -26,7 +26,7 @@ export function HeroSection({ title, subtitle }: HeroSectionProps) {
             {subtitle}
           </p>
           <div className="mt-10 flex items-center justify-center gap-4">
-            <Link href="/browse">
+            <Link href="/models">
             <Button className="gap-2 bg-purple-600 text-white hover:bg-purple-700">
               Browse Models
               <ArrowRight className="h-4 w-4" />

@@ -43,6 +43,23 @@ export interface Pricing {
   type: string; // e.g., "per-token" or "per-call"
   amount: number; // Cost
 }
+export interface Child {
+  text: string;
+}
+
+export interface LanguageData {
+  children: { children: Child[] }[];
+}
+
+export interface ApiDocsEntry {
+  js: LanguageData;
+  ts: LanguageData;
+  python: LanguageData;
+}
+
+export interface ApiDocsData {
+  entries: ApiDocsEntry[];
+}
 
 export interface Performance {
   latency: string; // e.g., "~500ms"
