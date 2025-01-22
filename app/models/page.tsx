@@ -9,8 +9,34 @@ import { Badge } from "@/components/ui/badge";
 import { Search, Filter } from "lucide-react";
 import stack from "../../contentstackConfig";
 import { NavbarSkeleton, ModelCardSkeleton, FooterSkeleton } from '@/components/LoadingSkeletons';
+interface NavbarRef {
+  [key: string]: any; // Replace `any` with the specific structure of navbar_ref if known
+}
 
-async function fetchModelsData() {
+interface FooterRef {
+  [key: string]: any; // Replace `any` with the specific structure of footer_ref if known
+}
+
+interface ModelFeature {
+  [key: string]: any; // Replace `any` with the specific structure of model features if known
+}
+
+interface Model {
+  features?: ModelFeature[];
+  [key: string]: any; // Replace `any` with the specific structure of a model if known
+}
+
+interface ModelsPageData {
+  navbar_ref?: NavbarRef[];
+  footer_ref?: FooterRef[];
+  models?: Model[];
+}
+
+async function fetchModelsData(): Promise<{
+  navbar: NavbarRef;
+  footer: FooterRef;
+  models: Model[];
+}> {
   try {
     const result = await stack
       .contentType("models_page")
@@ -19,9 +45,9 @@ async function fetchModelsData() {
         "navbar_ref",
         "footer_ref",
         "models",
-        "models.features"
+        "models.features",
       ])
-      .fetch();
+      .fetch() as ModelsPageData;
 
     const navbar = result.navbar_ref?.[0] || {};
     const footer = result.footer_ref?.[0] || {};
@@ -29,20 +55,21 @@ async function fetchModelsData() {
 
     return { navbar, footer, models };
   } catch (error) {
-    console.error("Error fetching models data:", error);
+    console.error("Failed to fetch models data:", error);
     throw error;
   }
 }
 
 
+
 export default function BrowseModels() {
-  const [models, setModels] = useState([]);
+  const [models, setModels] = useState<{ [key: string]: any }[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [availableTags, setAvailableTags] = useState<string[]>([]);
-  const [navbarData,setNavbarData] =useState("")
-  const [footerData,setFooterData] =useState("")
+  const [navbarData, setNavbarData] = useState<{ [key: string]: any }>({});
+  const [footerData, setFooterData] = useState<{ [key: string]: any }>({});
 
   useEffect(() => {
     async function fetchData() {
