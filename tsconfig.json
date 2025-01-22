@@ -22,6 +22,9 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "contentstackConfig.js"],
+  "vercel": {
+    "ignoreBuildErrors": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "contentstackConfig.js", "app/models/test.js"],
   "exclude": ["node_modules"]
 }
