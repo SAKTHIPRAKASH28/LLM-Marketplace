@@ -4,13 +4,15 @@ interface Link {
   href: string;
   title: string;
 }
-
+interface NavigationLink {
+  link: Link; // Matches the structure in the `links` array
+}
 interface SocialLink {
   link: Link;
 }
 
 interface FooterProps {
-  links: Link[];
+  links: NavigationLink[];
   social_links: SocialLink[];
   copyright: string;
 }
@@ -24,13 +26,13 @@ export function Footer({ links, social_links, copyright }: FooterProps) {
           <div>
             <h4 className="text-xl font-semibold text-white">Links</h4>
             <ul className="mt-4 space-y-2">
-              {links.map((link, index) => (
+              {links.map((hlink, index) => (
                 <li key={index}>
                   <a
-                    href={link.href}
+                    href={hlink.link.href}
                     className="text-zinc-400 hover:text-white "
                   >
-                    {link.title}
+                    {hlink.link.title}
                   </a>
                 </li>
               ))}
