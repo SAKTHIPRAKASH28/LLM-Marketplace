@@ -13,7 +13,7 @@ export interface Issue {
   id: string;
   title: string;
   description: string;
-  status: 'open' | 'closed';
+  status: string;
   createdAt: string;
   createdBy: string;
   labels: string[];

@@ -14,7 +14,7 @@
         "id": "2",
         "title": "Issue B",
         "description": "Lorem Ipsum",
-        "status": "close",
+        "status": "closed",
         "createdAt": "2024-02-19T15:30:00Z",
         "createdBy": "user 2",
         "labels": ["bug"],
