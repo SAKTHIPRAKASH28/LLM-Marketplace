@@ -16,7 +16,7 @@ export function HeroSection({ title, subtitle }: HeroSectionProps) {
           <div className="flex items-center justify-center gap-2">
             <Sparkles className="h-5 w-5 text-purple-500" />
             <span className="text-sm font-medium text-purple-400">
-              Large Language Model Marketplace
+              Large Language Models Marketplace
             </span>
           </div>
           <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
