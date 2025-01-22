@@ -64,7 +64,7 @@ export function Navbar({ menuItems }: NavbarProps) {
               {menuItems.map((item) => (
                 <a
                   key={item.label}
-                  href={item.href}
+                  href={item.url}
                   className="block rounded-md px-3 py-2 text-base text-zinc-400 hover:bg-zinc-900 hover:text-white"
                 >
                   {item.label}

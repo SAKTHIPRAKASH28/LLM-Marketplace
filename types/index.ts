@@ -7,7 +7,7 @@ export interface CTA {
 
 export interface MenuItem {
   label: string;
-  href: string;
+  url: string;
 }
 
 export interface NavbarProps {

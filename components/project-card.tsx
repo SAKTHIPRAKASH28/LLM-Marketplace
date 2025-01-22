@@ -1,11 +1,17 @@
 "use client";
 
-import { ProjectCardProps } from "@/types";
+
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github } from "lucide-react";
-import { motion } from "framer-motion";
+
+interface ProjectCardProps {
+  projectName: string;
+  languages: { name: string; color: string }[];
+  description: string;
+  repoUrl: string;
+}
 
 export function ProjectCard({
   projectName,
