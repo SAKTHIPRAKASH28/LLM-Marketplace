@@ -10,22 +10,21 @@ import {
   Image as ImageIcon,
   Send,
 } from "lucide-react";
-import { format } from "date-fns"; // Import date-fns for consistent date formatting
+ // Import date-fns for consistent date formatting
 import issuesData from "../data/issues.json";
 import commentsData from "../data/comments.json";
 import { Issue, Comment } from "@/types";
-import stack from "@/contentstackConfig";
-import { Navbar } from "@/components/navbar"; // Assuming the Navbar component is correctly set up
-import { Footer } from "@/components/footer"; // Assuming the Footer component is correctly set up
-
+import {default as deliveryStack} from "../../contentstackDeliveryConfig";
+import { Navbar } from "@/components/navbar"; 
+import { Footer } from "@/components/footer"; 
 async function fetchNavbarAndFooterData() {
   try {
-    const navbarData = await stack
+    const navbarData = await deliveryStack
       .contentType("llm_store_navbar")
       .entry("blt2d9312ce7631d045")
       .fetch();
 
-    const footerData = await stack
+    const footerData = await deliveryStack
       .contentType("llm_store_footer")
       .entry("bltde15764bad558ff4")
       .fetch();

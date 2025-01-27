@@ -5,11 +5,11 @@ import { HeroSection } from "@/components/hero-section";
 import { Navbar } from "@/components/navbar";
 import { SEO } from "@/components/seo";
 import { Footer } from "@/components/footer";
-import stack from "../contentstackConfig";
+import stack from "../contentstackDeliveryConfig";
 
 async function fetchLandingPageData() {
   try {
-    console.log("Fetching data..."); // Log to check if it's being called
+    
     const result = await stack
       .contentType("llm_store_landing_page")
       .entry("bltdff6eb9884a872e4")
@@ -23,7 +23,7 @@ async function fetchLandingPageData() {
       ])
       .fetch();
     
-    console.log("Fetched Result:", result); // Log the data from the fetch
+
     return result;
   } catch (error) {
     console.error("Error fetching landing page data:", error);

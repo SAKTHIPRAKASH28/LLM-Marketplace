@@ -25,6 +25,6 @@
   "vercel": {
     "ignoreBuildErrors": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "contentstackConfig.js", "app/models/test.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "contentstackDeliveryConfig.js", "app/models/test.js"],
   "exclude": ["node_modules"]
 }

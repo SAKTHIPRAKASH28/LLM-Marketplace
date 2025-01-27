@@ -7,7 +7,7 @@ import { ModelCard } from "@/components/model-card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Search, Filter } from "lucide-react";
-import stack from "../../contentstackConfig";
+import stack from "../../contentstackDeliveryConfig";
 import { NavbarSkeleton, ModelCardSkeleton, FooterSkeleton } from '@/components/LoadingSkeletons';
 interface NavbarRef {
   [key: string]: any; // Replace `any` with the specific structure of navbar_ref if known

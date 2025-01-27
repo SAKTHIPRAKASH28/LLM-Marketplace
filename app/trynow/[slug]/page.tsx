@@ -4,7 +4,7 @@ import { Copy } from "lucide-react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { NavbarSkeleton, FooterSkeleton, DocsSkeleton } from "@/components/LoadingSkeletons";
-import stack from "../../../contentstackConfig";
+import stack from "../../../contentstackDeliveryConfig";
 import { usePathname } from "next/navigation"; // Import usePathname from next/navigation
 import {ApiDocsData} from "@/types"
 

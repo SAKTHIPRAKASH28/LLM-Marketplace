@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@contentstack/delivery-sdk": "^4.4.5",
+    "@contentstack/management": "^1.19.0",
     "@hookform/resolvers": "^3.9.0",
     "@next/swc-wasm-nodejs": "13.5.1",
     "@radix-ui/react-accordion": "^1.2.0",
@@ -69,6 +70,7 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "5.2.2",
     "vaul": "^0.9.9",
+    "yarn": "^1.22.22",
     "zod": "^3.23.8"
   }
 }
